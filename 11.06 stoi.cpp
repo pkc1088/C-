@@ -29,6 +29,8 @@ int main(void)
  
     cout << endl;
     system("pause");
+    system("read -p 'Press Enter to continue...' var");
+    //wsl에서 쓸거면 pause말고 위에꺼 써야함
     return 0;
 }
 
