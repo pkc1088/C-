@@ -1,5 +1,47 @@
 #include <iostream>
 #include <cstring>
+#include <string.h>
+using namespace std;
+
+class Random
+{
+public:
+	Random()
+	{
+		srand((unsigned)time(0));
+	}
+
+	int next()
+	{
+		int b;
+		b= rand();
+		return b;
+	}
+	float nextInRange(int min, int max)
+	{
+        return 
+            min + (rand() % 4); 
+    }
+};
+
+int main() {
+	Random r;
+	cout << "-- 0ì—ì„œ " << RAND_MAX << "ê¹Œì§€ì˜ ëœë¤ ì •ìˆ˜ 10 ê°œ--" << endl;
+	for(int i=0; i<10; i++) {
+		int n = r.next(); 
+		cout << n << ' ';
+	}
+	cout << endl << endl << "-- 2ì—ì„œ " << "4 ê¹Œì§€ì˜ ëœë¤ ì •ìˆ˜ 10 ê°œ --" << endl;
+	for(int i=0; i<1; i++) {
+		int n = r.nextInRange(2, 4); 
+		cout << n << ' ';
+	}
+	cout << endl;
+}
+
+////////////////////////
+#include <iostream>
+#include <cstring>
 #include <cstdlib>
 #include <ctime>
 
@@ -37,12 +79,12 @@ public:
 
 int main() {
 	Random r;
-	cout << "-- 0¿¡¼­ " << RAND_MAX << "±îÁöÀÇ ·£´ı Á¤¼ö 10 °³--" << endl;
+	cout << "-- 0ì—ì„œ " << RAND_MAX << "ê¹Œì§€ì˜ ëœë¤ ì •ìˆ˜ 10 ê°œ--" << endl;
 	for(int i=0; i<10; i++) {
 		int n = r.next(); 
 		cout << n << ' ';
 	}
-	cout << endl << endl << "-- 2¿¡¼­ " << "4 ±îÁöÀÇ ·£´ı Á¤¼ö 10 °³ --" << endl;
+	cout << endl << endl << "-- 2ì—ì„œ " << "4 ê¹Œì§€ì˜ ëœë¤ ì •ìˆ˜ 10 ê°œ --" << endl;
 	for(int i=0; i<10; i++) {
 		int n = r.nextInRange(2, 4); 
 		cout << n << ' ';
